@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Submission Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Submission Portal</h1>
+            <p>Submit your video URLs with platform targeting and hashtags</p>
+        </header>
+
+        <main>
+            <form id="videoForm" class="submission-form">
+                <div class="form-group">
+                    <label for="videoUrl">Video URL *</label>
+                    <input type="url" id="videoUrl" name="videoUrl" required 
+                           placeholder="https://example.com/video">
+                    <span class="error-message" id="urlError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Target Platforms</label>
+                    <div class="platform-toggles">
+                        <div class="toggle-item">
+                            <input type="checkbox" id="youtube" name="platforms" value="youtube">
+                            <label for="youtube" class="toggle-label">
+                                <span class="toggle-switch"></span>
+                                YouTube
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <input type="checkbox" id="tiktok" name="platforms" value="tiktok">
+                            <label for="tiktok" class="toggle-label">
+                                <span class="toggle-switch"></span>
+                                TikTok
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <input type="checkbox" id="instagram" name="platforms" value="instagram">
+                            <label for="instagram" class="toggle-label">
+                                <span class="toggle-switch"></span>
+                                Instagram
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <input type="checkbox" id="twitter" name="platforms" value="twitter">
+                            <label for="twitter" class="toggle-label">
+                                <span class="toggle-switch"></span>
+                                Twitter/X
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hashtags">Hashtags</label>
+                    <textarea id="hashtags" name="hashtags" rows="3" 
+                              placeholder="Enter hashtags separated by spaces or commas (e.g., #video #content #social)"></textarea>
+                    <small class="help-text">Separate hashtags with spaces or commas</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description (Optional)</label>
+                    <textarea id="description" name="description" rows="4" 
+                              placeholder="Add a description for your video submission..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Video</span>
+                    <span class="btn-spinner" style="display: none;"></span>
+                </button>
+            </form>
+
+            <div class="status-panel" id="statusPanel">
+                <div class="status-header">
+                    <h3>Submission Status</h3>
+                    <button class="clear-status" id="clearStatus">Clear</button>
+                </div>
+                <div class="status-list" id="statusList"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
